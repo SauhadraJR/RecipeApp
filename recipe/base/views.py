@@ -15,7 +15,7 @@ def create(request):
         category = request.POST.get("category")
         process = request.POST.get("process")
         ingredients = request.POST.get("ingredients")
-        picture = request.POST.get("picture")
+        picture = request.FILES.get("picture")
         Recipe.objects.create(picture = picture, name= name ,description= description , category = category, process = process, ingredients = ingredients)
         return redirect("home")
     return render(request, 'create.html')

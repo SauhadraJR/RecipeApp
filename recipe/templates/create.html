@@ -10,7 +10,7 @@
 <body>
   {% include "navbar.html"%}
     <!-- <h1>Create page</h1> -->
-    <form method = "POST">
+    <form method = "POST" enctype="multipart/form-data">
       {% csrf_token %}
         <div class="mb-3">
           <label for="name" class="form-label">Name</label>
