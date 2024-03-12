@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from base.views import home,create,edit,delete, deleteall
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +27,4 @@ urlpatterns = [
     path('create/<int:pk>', edit, name = "edit"),
     path('delete/<int:pk>', delete, name = "delete"),
     path('deleteall/', deleteall, name = "deleteall"),
-]
+]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

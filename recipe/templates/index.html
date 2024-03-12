@@ -32,7 +32,9 @@
                     <td>{{recipe.category}}</td>
                     <td>{{recipe.process}}</td>
                     <td>{{recipe.ingredients}}</td>
-                    <td><img src="{{ recipe.picture }}" alt="{{ recipe.name }} Image"></td>
+                    
+                    <td><img src="{{ recipe.picture.url }}" alt="{{ recipe.name }} Image" style="width: 100px; height: 100px;"></td>
+                    
                     <td><a class="btn btn-outline-success" aria-current="page" href="{% url 'edit' pk=recipe.id %}">Edit</a>&nbsp; <a class="btn btn-outline-danger" aria-current="page" href="{% url 'delete' pk=recipe.id %}">Delete</a> </td>
                 </tr>
         {% endfor %}
