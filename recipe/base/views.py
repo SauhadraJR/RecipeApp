@@ -8,6 +8,11 @@ def home(request):
     data = {'recipes':recipe_obj}
     return render(request,'index.html',context = data)
 
+def details(request,pk):
+    recipe_obj = Recipe.objects.get(id = pk)
+    data = {'recipes':recipe_obj}
+    return render(request,'details.html',context = data)
+
 def create(request):
     if request.method == "POST":
         name = request.POST.get("name")
@@ -29,14 +34,16 @@ def edit(request,pk):
         category = request.POST.get("category")
         process = request.POST.get("process")
         ingredients = request.POST.get("ingredients")
-        picture = request.POST.get("picture")
+        new_picture = request.FILES.get("picture")
+
+        if new_picture:
+            Recipe_obj.picture = new_picture
         
         Recipe_obj.name = name
         Recipe_obj.description = description
         Recipe_obj.category = category
         Recipe_obj.process = process
         Recipe_obj.ingredients = ingredients
-        Recipe_obj.picture = picture
 
         Recipe_obj.save()
         return redirect("home")

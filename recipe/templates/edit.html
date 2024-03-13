@@ -9,7 +9,7 @@
 </head>
 <body>
     {% include "navbar.html"%}
-    <form method = "POST">
+    <form method = "POST" enctype="multipart/form-data">
       {% csrf_token %}
 
       
@@ -69,7 +69,7 @@
         
         <div class="mb-3">
             <label for="picture" class="form-label">Upload Picture</label>
-            <input type="file" class="form-control" id="picture" name="picture" value="{{ Recipe.picture }}">
+            <input type="file" class="form-control" id="picture" name="picture">
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
       </form>

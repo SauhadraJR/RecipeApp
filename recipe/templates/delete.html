@@ -22,7 +22,6 @@
             <th scope="col">Category</th>
             <th scope="col">Process</th>
             <th scope="col">Ingredients</th>
-            <th scope="col">Image</th>
             <th scope="col">Action</th>           
 
           </tr>
@@ -34,9 +33,9 @@
               <td>{{Recipe.name}}</td>
               <td>{{Recipe.description}}</td>
               <td>{{Recipe.category}}</td>
-              <td>{{recipe.process}}</td>
-              <td>{{recipe.ingredients}}</td>
-              <td><button type = "submit" class="btn btn-outline-success" aria-current="page" >Confirm Delete</button>
+              <td>{{Recipe.process}}</td>
+              <td>{{Recipe.ingredients}}</td>
+              <td><button type = "submit" class="btn btn-outline-danger" aria-current="page" >Confirm Delete</button>
                 <a class="btn btn-outline-success" aria-current="page" href="{% url 'home' %}">Cancel</a> 
                 </td>
                 
